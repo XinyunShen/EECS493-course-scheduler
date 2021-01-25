@@ -1,0 +1,13 @@
+env/
+tmp/
+.*/
+*.pyc
+*.tar.gz
+*.pem
+*.egg-info
+node_modules/
+__pycache__/
+bundle.js
+cookies.txt
+session.json
+var/
