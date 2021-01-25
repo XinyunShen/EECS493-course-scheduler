@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="{{ url_for('static',filename='/css/style.css') }}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+
+<title>wolfpack</title>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+            <img id="wolf-pack-logo" src="{{ url_for('static',filename='wolfpack-logo.png')}}">
+        </a>
+        <form class="form-inline">
+            <a class="navbar-brand" href="/u/{{logname}}/">{{logname}}</a>
+            <a class="navbar-brand" href="/accounts/logout/">Log Out</a>
+        </form>
+    </nav>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="/api/v1/classes">Find Classes</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="/api/v1/feed">Friends</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="/api/v1/u/{{session.username}}">My Schedule</a>
+        </li>
+    </ul>
+    <div id="reactEntryFeed">
+        <div class="container-fluid mx-3">
+            <div class="row top-buffer"></div>
+            <div class="row">
+                <div class="col-8">
+                    <div class="row justify-content profile mb-3" style="background-color: silver;">
+                        <img class="mx-0" id="changjus" src="{{ url_for('static',filename='changjus.jpg')}}">
+                        <div class="username">changjus</div>
+                    </div>
+                    <div class="row justify-content-center schedule">
+                        <img class="schedule" id="schedule_1" style="width: 100%" src="{{ url_for('static',filename='schedule_1.png')}}">
+                    </div>
+                </div>
+                <div class="col-4 text-center">
+                    <h5>My Classes</h5>
+                    <div class="row">
+                        <div class="col-12 mb-3 mt-2">
+                            <button>Asian Studies 261</button>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <button>Economics 101</button>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <button>EECS 492</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Load JavaScript -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bundle.js') }}"></script>
+</body>

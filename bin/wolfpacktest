@@ -1,0 +1,10 @@
+#!/bin/bash
+# wolfpacktest
+
+set Eeuo pipefail
+
+pycodestyle wolfpack
+pydocstyle wolfpack
+pylint --disable=cyclic-import wolfpack
+
+npx eslint --ext jsx wolfpack/js/

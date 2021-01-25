@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="{{ url_for('static',filename='/css/style.css') }}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+
+<title>Wolfpack</title>
+
+<body class="bg-dark vertical-center">
+    <div class="container">
+        <div class="row top-buffer"></div>
+        <div class="row justify-content-center">
+            <img id="wolf-pack" src="{{ url_for('static',filename='wolf-pack.png')}}">
+        </div>
+        <div class="row top-buffer"></div>
+        <div class="row justify-content-center">
+            <form action="/accounts/login/" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <input type="text" name="username" placeholder="username" />
+                    <input type="password" name="password" placeholder="password" />
+                    <input type="submit" value="login" />
+                </div>
+            </form>
+        </div>
+    </div>
+</body>

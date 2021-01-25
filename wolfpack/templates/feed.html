@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="{{ url_for('static',filename='/css/style.css') }}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+
+<title>wolfpack</title>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+            <img id="wolf-pack-logo" src="{{ url_for('static',filename='wolfpack-logo.png')}}">
+        </a>
+        <form class="form-inline">
+            <a class="navbar-brand" href="/u/{{logname}}/">{{logname}}</a>
+            <a class="navbar-brand" href="/accounts/logout/">Log Out</a>
+        </form>
+    </nav>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="/">Find Classes</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="/api/v1/feed">Friends</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="/api/v1/schedule">My Schedule</a>
+        </li>
+    </ul>
+    <div id="reactEntryFeed">
+        <div class="container">
+            <div class="row top-buffer"></div>
+            <div class="post">
+                <div class="row justify-content profile">
+                    <img id="changjus" src="{{ url_for('static',filename='changjus.jpg')}}">
+                    <div class="username">changjus</div>
+                </div>
+                <div class="row top-buffer"></div>
+                <div class="row justify-content-center schedule">
+                    <img class="schedule" id="schedule_1" src="{{ url_for('static',filename='schedule_1.png')}}">
+                </div>
+            </div>
+            <div class="row top-buffer"></div>
+            <div class="post">
+                <div class="row justify-content profile">
+                    <img id="alex" src="{{ url_for('static',filename='alex.jpg')}}">
+                    <div class="username">alex</div>
+                </div>
+                <div class="row top-buffer"></div>
+                <div class="row justify-content-center schedule">
+                    <img class="schedule" id="schedule_1" src="{{ url_for('static',filename='schedule_2.png')}}">
+                </div>
+            </div>
+            <div class="row top-buffer"></div>
+            <div class="post">
+                <div class="row justify-content profile">
+                    <img id="rku" src="{{ url_for('static',filename='rku.jpg')}}">
+                    <div class="username">rku</div>
+                </div>
+                <div class="row top-buffer"></div>
+                <div class="row justify-content-center schedule">
+                    <img class="schedule" id="schedule_1" src="{{ url_for('static',filename='schedule_3.png')}}">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Load JavaScript -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bundle.js') }}"></script>
+</body>

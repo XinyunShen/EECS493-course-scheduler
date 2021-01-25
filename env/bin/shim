@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+export NODE_PATH='/Users/xinyunshen/Desktop/umich/2020-2021 fall/EECS 493/eecs493-final/env/lib/node_modules'
+export NPM_CONFIG_PREFIX='/Users/xinyunshen/Desktop/umich/2020-2021 fall/EECS 493/eecs493-final/env'
+export npm_config_prefix='/Users/xinyunshen/Desktop/umich/2020-2021 fall/EECS 493/eecs493-final/env'
+exec '/Users/xinyunshen/Desktop/umich/2020-2021 fall/EECS 493/eecs493-final/env/bin/node' "$@"

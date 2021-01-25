@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="{{ url_for('static',filename='/css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='/css/bootstrap.min.css') }}">
+<script src="{{ url_for('static',filename='/css/jquery.min.js') }}"></script>
+<script src="{{ url_for('static',filename='/css/popper.min.js') }}"></script>
+<script src="{{ url_for('static',filename='/css/bootstrap.min.js') }}"></script>
+
+
+<title>wolfpack</title>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="/">wolfpack</a>
+            <form class="form-inline">
+                <a class="navbar-brand" href="/explore/">Explore</a>
+                <a class="navbar-brand" href="/u/{{logname}}/">{{logname}}</a>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row" style="margin-top:2em;">
+            <div class="col-sm-6">
+                <h3>Followers</h3>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            
+        </div>
+    </div>
+</body>

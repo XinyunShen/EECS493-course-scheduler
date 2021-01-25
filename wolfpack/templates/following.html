@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="{{ url_for('static',filename='/css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='/css/bootstrap.min.css') }}">
+<script src="{{ url_for('static',filename='/css/jquery.min.js') }}"></script>
+<script src="{{ url_for('static',filename='/css/popper.min.js') }}"></script>
+<script src="{{ url_for('static',filename='/css/bootstrap.min.js') }}"></script>
+
+
+<title>wolfpack</title>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+            <img id="wolf-pack-logo" src="{{ url_for('static',filename='wolfpack-logo.png')}}">
+        </a>
+        <form class="form-inline">
+            <a class="navbar-brand" href="/u/{{session.username}}/">{{session.username}}</a>
+            <a class="navbar-brand" href="/explore/">Explore</a>
+            <a class="navbar-brand" href="/accounts/logout/">Log Out</a>
+        </form>
+    </nav>
+
+    <div class="container">
+        <div class="row" style="margin-top:2em;">
+            <div class="col-sm-6">
+                <h3>Following</h3>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            {% for follower in following%}
+            <div class="col-sm-12">
+                <div class="card" style="margin-top:2em;">
+                    <div class="card-body">
+                        <div class="float-left">
+                            <a href="/u/{{follower.username}}/" class="card-title">{{follower.username}}</a>
+                        </div>
+                        <div class="float-right">
+                            {% if logname == follower.username%}
+
+                            {% else %}
+                                {% if follower.logname_follows_username %}
+                                <p>following</p>
+                                <!-- DO NOT CHANGE THIS (aside from where we say 'FIXME') -->
+                                <form action="/u/{{user_url_slug}}/following/" method="post" enctype="multipart/form-data">
+                                <input type="submit" name="unfollow" value="unfollow"/>
+                                <input type="hidden" name="username" value="{{follower.username}}"/>
+                                </form>
+                                {% else %}
+                                <p>not following</p>
+                                <!-- DO NOT CHANGE THIS (aside from where we say 'FIXME') -->
+                                <form action="/u/{{user_url_slug}}/following/" method="post" enctype="multipart/form-data">
+                                <input type="submit" name="follow" value="follow"/>
+                                <input type="hidden" name="username" value="{{follower.username}}"/>
+                                </form>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
